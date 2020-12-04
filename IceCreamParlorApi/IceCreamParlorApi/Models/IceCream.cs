@@ -11,10 +11,5 @@ namespace IceCreamParlorApi.Models
                            DateTime? DateIntroduced,
                            [Required] decimal Price);
 
-    public record Cake(int Id,
-                       [Required] string Shape,
-                       [Required] string Size,
-                       [Required] string Flavor,
-                       DateTime DateIntroduced,
-                       [Required] decimal Price);
+    
 }
