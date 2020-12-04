@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace IceCreamParlorApi.Models
 {
-    public class ParlorItem
-    {
-        public int Id { get; set; }
-        public string Type { get; set; } //icecream, sundae, beverage,cakes
-        public string Flavor { get; set; }//ice cream flavors : Winter Chocolate, Caramel Cheesecake, Chocolate, Cotton Candy
-        public DateTime IntroducedDate { get; set; }
-        public decimal Price { get; set; }
+    public record IceCream(int Id,
+                           [Required] string Flavor,
+                           DateTime? DateIntroduced,
+                           [Required] decimal Price);
 
-    }
+    public record Cake(int Id,
+                       [Required] string Shape,
+                       [Required] string Size,
+                       [Required] string Flavor,
+                       DateTime DateIntroduced,
+                       [Required] decimal Price);
 }
